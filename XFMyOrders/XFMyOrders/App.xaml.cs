@@ -4,16 +4,20 @@ using System.Linq;
 using System.Text;
 
 using Xamarin.Forms;
+using XFMyOrders.Pages;
 
 namespace XFMyOrders
 {
     public partial class App : Application
     {
+        public static NavigationPage Navigator { get; internal set; }
+        public static MasterPage Master { get; internal set; }
+
         public App()
         {
             InitializeComponent();
 
-            MainPage = new XFMyOrders.MainPage();
+            MainPage = new XFMyOrders.Pages.MasterPage();
         }
 
         protected override void OnStart()

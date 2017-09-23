@@ -4,7 +4,17 @@
              x:Class="XFMyOrders.App">
 	<Application.Resources>
 
-		<!-- Application resource dictionary -->
+        <ResourceDictionary>
+            <!--General Colors-->
+            <Color x:Key="MainColor">#1565c0</Color>
+            <Color x:Key="FontColor">#52656b</Color>
+            <Color x:Key="AccentColorOne">#cdff00</Color>
+            <Color x:Key="AccentColorTwo">#b8b89f</Color>
+            <Color x:Key="BackgroundColor">#f9f9f9</Color>
+            <!--Menu Colors-->
+            <Color x:Key="MenuColor">#52656b</Color>
+            <Color x:Key="MenuFontColor">#ffffff</Color>
+        </ResourceDictionary>
 
 	</Application.Resources>
 </Application>

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XFMyOrders.Pages.MainPage"
+             Title="MyOrders"
+             xmlns:control="clr-namespace:XFMyOrders.Controls"
+             xmlns:DataContext="clr-namespace:XFMyOrders.ViewModels"
+             BackgroundColor="{StaticResource BackgroundColor}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="ic_unarchive.png">
+            
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.BindingContext>
+        <DataContext:MainViewModel></DataContext:MainViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <control:OrderListView ItemsSource="{Binding Orders}"
+                                   ItemClickCommand="{Binding ItemClickCommand}">
+                <control:OrderListView.ItemTemplate>
+                    <DataTemplate>
+                        <ImageCell Text="{Binding Title}"
+                                   Detail="{Binding Detail}"
+                                   ImageSource="{Binding Image}"/>
+                    </DataTemplate>
+                </control:OrderListView.ItemTemplate>
+            </control:OrderListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XFMyOrders.Pages.MenuPage"
+             xmlns:control="clr-namespace:XFMyOrders.Controls"
+             xmlns:bindingSource="clr-namespace:XFMyOrders.ViewModels"            
+             Title="Menu">
+    <ContentPage.BindingContext>
+        <bindingSource:MasterViewModel></bindingSource:MasterViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout HorizontalOptions="FillAndExpand"    
+                             Orientation="Vertical"
+                             BackgroundColor="#1565c0"
+                             HeightRequest="120">
+                <Label Text="Master"    
+                           TextColor="Orange"
+                           FontSize="Medium" 
+                           VerticalTextAlignment="Center"
+                           HorizontalTextAlignment="Center"
+                           VerticalOptions="FillAndExpand"
+                           HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+            <control:BetterListView ItemsSource="{Binding MenuItems}"
+                                    ItemClickCommand="{Binding ItemClickCommand}"
+                                    RowHeight="60"
+                                    SeparatorVisibility="None">
+                <control:BetterListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout VerticalOptions="FillAndExpand"
+                                            Orientation="Horizontal"
+                                            Padding="20,10,0,10"
+                                            Spacing="20">
+
+                                <Image Source="{Binding Icon}"
+                                       WidthRequest="40"
+                                       HeightRequest="40"
+                                       VerticalOptions="Center" />
+
+                                <Label Text="{Binding Title}"
+                                       FontSize="Medium"
+                                       VerticalOptions="Center"
+                                       TextColor="Black"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </control:BetterListView.ItemTemplate>
+            </control:BetterListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
